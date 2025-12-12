@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>porta-genf-ifrnnc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1> GENF - Grêmio Estudantil Nísia Floresta </h1>
+            <p class="contexto"> Membros e Projetos do Grêmio Estudantil Nísia Floresta, IFRN - Nova Cruz</p>
+        </header>
+
+        <section class="formulario-area">
+            <h2>Formulário de Cadastro e Atualização</h2>
+            <form id="formulario-elemento">
+                <div class="campos-container">
+                    <label for="nome">Nome/Título do Elemento:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="identificador">Matrícula/ID:</label>
+                    <input type="text" id="identificador" name="identificador" required>
+                    
+                    <label for="diretoria">Diretoria de Atuação:</label>
+                    <select id="diretoria" name="diretoria" required>
+                        <option value="">Selecione a Diretoria</option>
+                        <option value="DICOM">DICOM (Comunicação)</option>
+                        <option value="DIARTE">DIARTE (Arte e Cultura)</option>
+                        <option value="DIEL">DIEL (Esporte e Lazer)</option>
+                        <option value="DIDH">DIDH (Direitos Humanos)</option>
+                        <option value="DIMA">DIMA (Meio Ambiente)</option>
+                        <option value="DIAES">DIAES (Assuntos Estudantis)</option>
+                    </select>
+                    
+                    <label for="status">Situação/Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
+                        <option value="Em Andamento">Em Andamento (Para Projetos)</option>
+                    </select>
+
+                    <label for="resumo">Descrição/Resumo da Atuação:</label>
+                    <textarea id="resumo" name="resumo" rows="3"></textarea>
+
+                </div>
+                
+                <div class="botoes-form">
+                    <button type="submit" id="btn-salvar">Salvar</button>
+                    <button type="button" id="btn-cancelar">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <section class="listagem-area">
+            <h2>Listagem de Elementos (Membros/Projetos)</h2>
+
+            <div class="botoes-importacao">
+                <input type="file" id="arquivoInput" accept=".csv">
+                <button id="btn-importar">Importar</button>
+                <button id="btn-exportar">Exportar</button>
+            </div>
+
+            <div class="tabela-lista">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome/Título</th>
+                            <th>ID/Matrícula</th>
+                            <th>Diretoria</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-elementos">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
